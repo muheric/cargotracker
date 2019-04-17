@@ -4,7 +4,7 @@ pipeline {
     }
     tools {
         // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
-        maven "Maven 3.6.0"
+        maven "Maven 3.6.1"
     }
     environment {
         // This can be nexus3 or nexus2
@@ -12,9 +12,9 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "192.168.225.213:8081"
+        NEXUS_URL = "192.168.225.214:8081"
         // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "maven-mixed"
+        NEXUS_REPOSITORY = "repository-example"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
     }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/danielalejandrohc/cargotracker.git';
+                    git 'https://github.com/muheric/cargotracker.git';
                 }
             }
         }
