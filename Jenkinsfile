@@ -24,7 +24,7 @@ pipeline {
 
             steps {
                 script {
-                    git 'https://github.com/muheric/cargotracker.git'
+                    git 'https://github.com/muheric/cargotracker.git';
                 }
             }
 
