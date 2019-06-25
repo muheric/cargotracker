@@ -31,7 +31,18 @@ pipeline {
         }
 
     }
-    stage ("mvn publish") {
+        stage ("Testing the build"){
+            steps {
+                script {
+                    sh '
+                       echo "Hello World! We are building the future"
+                    '
+                }
+            }
+
+        }
+
+        stage ("mvn publish") {
         steps {
             script {
                 sh "mvn package -DskipTests=true"
